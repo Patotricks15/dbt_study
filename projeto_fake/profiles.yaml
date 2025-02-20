@@ -1,0 +1,11 @@
+projeto_fake:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: my_user        # Ajuste aqui
+      pass: my_pass          # Ajuste aqui
+      port: 5432
+      dbname: db_fake
+      schema: public

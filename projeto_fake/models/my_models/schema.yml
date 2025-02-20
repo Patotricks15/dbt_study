@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: clientes_filtrados
+    description: "Clientes com idade >= 40"
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+      - name: idade
+        tests:
+          - not_null
