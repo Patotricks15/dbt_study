@@ -1,0 +1,11 @@
+name: 'iris_project'
+version: '1.0.0'
+profile: 'iris_project'
+
+model-paths: ["models"]
+seed-paths: ['data']
+
+models:
+  iris_project:
+    models:
+      materialized: view

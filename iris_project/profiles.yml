@@ -1,0 +1,11 @@
+iris_project:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: "patotricks"
+      pass: "Patrick15@"
+      port: 5432
+      dbname: iris
+      schema: public
