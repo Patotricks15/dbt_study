@@ -3327,3 +3327,39 @@ with relation as (
 [0m12:24:41.627510 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/home/patrick/dbt_study/iris_project/logs', 'version_check': 'True', 'profiles_dir': '/home/patrick/dbt_study/iris_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt docs serve', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
 [0m12:24:41.797277 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '683cda55-928f-4fc6-a92c-ceb1690ace2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a69b382acc0>]}
 [0m12:24:41.862670 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '683cda55-928f-4fc6-a92c-ceb1690ace2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a69b3b1f3e0>]}
+[0m13:03:08.782286 [error] [MainThread]: Encountered an error:
+
+[0m13:03:08.785615 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/patrick/dbt_study/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/patrick/dbt_study/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/patrick/dbt_study/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 235, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/patrick/dbt_study/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 264, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/patrick/dbt_study/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 311, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/patrick/dbt_study/venv/lib/python3.12/site-packages/dbt/cli/main.py", line 301, in docs_serve
+    results = task.run()
+              ^^^^^^^^^^
+  File "/home/patrick/dbt_study/venv/lib/python3.12/site-packages/dbt/task/docs/serve.py", line 29, in run
+    httpd.serve_forever()
+  File "/usr/lib/python3.12/socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+[0m13:03:08.787274 [debug] [MainThread]: Resource report: {"command_name": "serve", "command_success": false, "command_wall_clock_time": 2307.2612, "process_in_blocks": "0", "process_kernel_time": 0.201404, "process_mem_max_rss": "96732", "process_out_blocks": "3360", "process_user_time": 1.831143}
+[0m13:03:08.788115 [debug] [MainThread]: Command `dbt docs serve` failed at 13:03:08.787979 after 2307.26 seconds
+[0m13:03:08.788625 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a69b41133e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a69b3034d70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a69b3e940b0>]}
+[0m13:03:08.789340 [debug] [MainThread]: Flushing usage events
+[0m13:03:09.357065 [debug] [MainThread]: An error was encountered while trying to flush usage events

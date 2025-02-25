@@ -1,0 +1,10 @@
+# dbt_project.yml
+name: iris_python_project
+version: '1.0'
+config-version: 2
+
+profile: my_dbt_profile
+
+models:
+  iris_python_project:
+    +materialized: table

@@ -1,0 +1,8 @@
+my_dbt_profile:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "./db.duckdb"
+      schema: main
+      threads: 1
